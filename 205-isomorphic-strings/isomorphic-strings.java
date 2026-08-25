@@ -11,8 +11,8 @@ class Solution {
             if (sMap[a] != tMap[b]) {
                 return false;
             }
-            sMap[a] = i + 1;
-            tMap[b] = i + 1;
+            sMap[a] = i+1;
+            tMap[b] = i+1;
         }
         return true;
     }
