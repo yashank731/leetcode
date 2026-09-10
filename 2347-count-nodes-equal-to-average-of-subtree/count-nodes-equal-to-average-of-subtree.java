@@ -1,39 +1,22 @@
-/**
- * Definition for a binary tree node.
- * public class TreeNode {
- *     int val;
- *     TreeNode left;
- *     TreeNode right;
- *     TreeNode() {}
- *     TreeNode(int val) { this.val = val; }
- *     TreeNode(int val, TreeNode left, TreeNode right) {
- *         this.val = val;
- *         this.left = left;
- *         this.right = right;
- *     }
- * }
- */
 class Solution {
-    int ans = 0;
-    int[] get(TreeNode root) {
-        if (root == null) return new int[]{0, 0};
-        int[] left = get(root.left);
-        int[] right = get(root.right);
-        return new int[]{
-            root.val + left[0] + right[0],
-            1 + left[1] + right[1]
-        };
-    }
+        int result=0;
     public int averageOfSubtree(TreeNode root) {
-        if (root == null) return 0;
-        int[] left = get(root.left);
-        int[] right = get(root.right);
-        int sum = root.val + left[0] + right[0];
-        int cnt = 1 + left[1] + right[1];
-        if (root.val == sum / cnt)
-            ans++;
-        averageOfSubtree(root.left);
-        averageOfSubtree(root.right);
-        return ans;
+        solve(root);
+        return result;
+    }
+    private int[] solve(TreeNode root){
+        if(root==null){
+            return new int[]{0,0};
+        }
+        int sum=0;
+        int count =0;
+        int[] left = solve(root.left);
+        int[] right =solve(root.right);
+        sum+=left[0]+right[0]+root.val;
+        count+=left[1]+right[1]+1;
+        if(sum/count==root.val){
+            result++;
+        }
+        return new int[]{sum,count};
     }
 }
