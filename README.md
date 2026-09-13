@@ -25,21 +25,7 @@ This repository contains my solutions to various **LeetCode problems**, mainly w
 
 My goal is to solve problems regularly, improve my logical thinking, and build a strong foundation in **DSA and competitive programming**.
 
-## 📂 Repository Structure
 
-```text
-LeetCode-Solutions/
-│
-├── Arrays/
-├── Strings/
-├── BinarySearch/
-├── Sorting/
-├── LinkedList/
-├── Stack/
-├── Queue/
-├── Trees/
-└── README.md
-```
 
 ## 📈 Progress
 
